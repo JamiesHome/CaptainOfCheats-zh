@@ -1,13 +1,5 @@
 # CaptainOfCheats-zh
 Captain of Industry 的作弊Mod，这是基于[CaptainOfCheats](https://github.com/altmank/CaptainOfCheats "CaptainOfCheats")的中文汉化版本。它有一个作弊菜单，可以通过 F8 键或单击底部工具栏上最右侧的船轮图标来访问。
-## 更新
-
-基于CaptainOfCheats-v2.1.0 中文汉化版  
-
-Captain of Industry v0.5.3e 可食用  
-
-
-
 ## 功能
 - 将指定数量的任何可运输产品运到您的造船厂
 - 使用存储神模式工具（在您的工具菜单中）将任何存储建筑变成产品的无限提供者或删除者。警告：使用上帝模式从无到有创造产品，并打破游戏内部跟踪回收的方式。因此，如果您的生产链使用上帝模式，您可能会发现回收不会产生您期望的输出。
