@@ -35,7 +35,7 @@ namespace CaptainOfCheats.Cheats.Generate
             _electricityCheatProvider = electricityCheatProvider.Instance;
         }
 
-        public string Name => "Generate";
+        public string Name => "电力发展";
         public string IconPath => Assets.Unity.UserInterface.Toolbar.Power_svg;
 
         protected override void BuildUi()
@@ -61,7 +61,7 @@ namespace CaptainOfCheats.Cheats.Generate
         private void BuildKwSlider(StackContainer topOf)
         {
             Builder
-                .AddSectionTitle(topOf, new LocStrFormatted("Perpetual KW Generation"), new LocStrFormatted("Use increment buttons to change perpetual KW amount generation"));
+                .AddSectionTitle(topOf, new LocStrFormatted("永久发电量"), new LocStrFormatted("使用增量按钮更改永久发电量"));
 
             var sliderLabel = Builder
                 .NewTxt("")
@@ -91,7 +91,7 @@ namespace CaptainOfCheats.Cheats.Generate
         private void BuildTFlopSlider(StackContainer topOf)
         {
             Builder
-                .AddSectionTitle(topOf, new LocStrFormatted("Perpetual TFlop Generation"), new LocStrFormatted("Use increment buttons to change perpetual TFLOP amount generation"));
+                .AddSectionTitle(topOf, new LocStrFormatted("计算量增加TFLOP"), new LocStrFormatted("使用增量按钮更改永久 TFLOP 数量生成"));
 
             var sliderLabel = Builder
                 .NewTxt("")
@@ -122,7 +122,7 @@ namespace CaptainOfCheats.Cheats.Generate
         private void BuildUnitySlider(StackContainer topOf)
         {
             Builder
-                .AddSectionTitle(topOf, new LocStrFormatted("Perpetual Unity Generation (per Month)"), new LocStrFormatted("Use increment buttons to change perpetual Unity amount generation"));
+                .AddSectionTitle(topOf, new LocStrFormatted("永久增加凝聚力"), new LocStrFormatted("使用增量按钮更改永久凝聚力数量生成"));
 
             var sliderLabel = Builder
                 .NewTxt("")
