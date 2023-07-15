@@ -24,7 +24,7 @@ namespace CaptainOfCheats.Cheats.Weather
             _weatherCheatProvider = weatherCheatProvider.Instance;
         }
 
-        public string Name => "Weather";
+        public string Name => "天气";
         public string IconPath => Assets.Unity.UserInterface.Toolbar.WorldMap_svg;
 
         protected override void BuildUi()

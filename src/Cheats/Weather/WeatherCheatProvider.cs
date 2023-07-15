@@ -47,21 +47,21 @@ namespace CaptainOfCheats.Cheats.Weather
             return new Lyst<ICheatCommandBase>
             {
                 new CheatButtonCommand(
-                    "Reset weather",
+                    "重置天气",
                     () =>
                     {
                         SetWeatherAccessors();
                         SetWeather(Ids.Weather.Sunny, true);
                     }),
                 new CheatButtonCommand(
-                    "Sunny weather",
+                    "天气晴朗",
                     () =>
                     {
                         SetWeatherAccessors();
                         SetWeather(Ids.Weather.Sunny);
                     }),
                 new CheatButtonCommand(
-                    "Cloudy weather",
+                    "多云天气",
                     () =>
                     {
                         SetWeatherAccessors();
@@ -69,14 +69,14 @@ namespace CaptainOfCheats.Cheats.Weather
                     }),
 
                 new CheatButtonCommand(
-                    "Rainy weather",
+                    "阴雨天气",
                     () =>
                     {
                         SetWeatherAccessors();
                         SetWeather(Ids.Weather.Rainy);
                     }),
                 new CheatButtonCommand(
-                    "Heavy rain weather",
+                    "大雨天气",
                     () =>
                     {
                         SetWeatherAccessors();
