@@ -38,14 +38,14 @@ namespace CaptainOfCheats.Cheats.Terrain
             _looseProductProtos = _protosDb.Filter<LooseProductProto>(proto => proto.CanBeLoadedOnTruck && proto.CanBeOnTerrain).OrderBy(x => x);
         }
 
-        public string Name => "Terrain";
+        public string Name => "地形";
         public string IconPath => Assets.Unity.UserInterface.Toolbar.Dumping_svg;
 
         protected override void BuildUi()
         {
             var tabContainer = CreateStackContainer();
 
-            Builder.AddSectionTitle(tabContainer, new LocStrFormatted("Terrain"), new LocStrFormatted("Select the terrain to use when dumping."));
+            Builder.AddSectionTitle(tabContainer, new LocStrFormatted("地形"), new LocStrFormatted("选择倾倒时要使用的地形."));
             var terrainSelector = BuildTerrainSelector(tabContainer);
             terrainSelector.AppendTo(tabContainer, new Vector2(150, 28f), ContainerPosition.LeftOrTop);
             var terrainPhysicsToggleSwitch = CreateTerrainPhysicsToggleSwitch();
@@ -74,7 +74,7 @@ namespace CaptainOfCheats.Cheats.Terrain
             buildChangeTerrainButton.AppendTo(instantTerrainButtonContainer, buildChangeTerrainButton.GetOptimalSize(), ContainerPosition.MiddleOrCenter);
             
 
-            Builder.AddSectionTitle(tabContainer, new LocStrFormatted("Other"));
+            Builder.AddSectionTitle(tabContainer, new LocStrFormatted("其他"));
 
             var otherTerrainActions = Builder.NewPanel("instantTerrainActions").SetBackground(Builder.Style.Panel.ItemOverlay);
             otherTerrainActions.AppendTo(tabContainer, size: 50f, Offset.All(0));
@@ -115,8 +115,8 @@ namespace CaptainOfCheats.Cheats.Terrain
         private SwitchBtn CreateTerrainIgnoreMineTowerDesignationsToggleSwitch()
         {
             var toggleBtn = Builder.NewSwitchBtn()
-                .SetText("Ignore Tower Designations")
-                .AddTooltip("When instantly completing mining or dumping operations, ignore designations under mine tower control.")
+                .SetText("矿场控制塔")
+                .AddTooltip("当立即完成采矿或倾倒作业时，矿场控制塔下的指定.")
                 .SetOnToggleAction((toggleVal) => _ignoreMineTowerDesignations = toggleVal);
 
             _switchBtns.Add(toggleBtn, () => _ignoreMineTowerDesignations);
@@ -127,9 +127,9 @@ namespace CaptainOfCheats.Cheats.Terrain
         private SwitchBtn CreateTerrainPhysicsToggleSwitch()
         {
             var toggleBtn = Builder.NewSwitchBtn()
-                .SetText("Disable Terrain Physics")
+                .SetText("禁用地形物理")
                 .AddTooltip(
-                    "When instantly completing mining or dumping designations, this toggle will indicate whether or not the game physics engine will affect the modified terrain. When turned on, expect very sharp edges on any terrain modifications you make. Note: Vehicles mining/dumping near no-physics terrain may cause no-physics terrain to start responding to physics.")
+                    "当立即完成采矿或倾倒指定时，此切换将指示游戏物理引擎是否会影响修改后的地形。启用后，您所做的任何地形修改都会出现非常锐利的边缘。注意：车辆在无物理地形附近采矿/倾倒可能会导致无物理地形开始对物理做出响应.")
                 .SetOnToggleAction((toggleVal) => _disableTerrainPhysicsOnMiningAndDumping = toggleVal);
 
 
@@ -154,9 +154,9 @@ namespace CaptainOfCheats.Cheats.Terrain
         {
             var btn = Builder.NewBtnPrimary("button")
                 .SetButtonStyle(Style.Global.PrimaryBtn)
-                .SetText(new LocStrFormatted("Instant Mine"))
+                .SetText(new LocStrFormatted("矿产立即挖掘完毕"))
                 .AddToolTip(
-                    "All areas currently designated for mining will have their mining operation completed immediately. Results in no resources for the player.")
+                    "目前指定用于采矿的所有区域都将立即完成采矿作业。这将导致玩家没有资源.")
                 .OnClick(() => _cheatProvider.CompleteAllMiningDesignations(_ignoreMineTowerDesignations, _disableTerrainPhysicsOnMiningAndDumping));
 
             return btn;
@@ -166,9 +166,9 @@ namespace CaptainOfCheats.Cheats.Terrain
         {
             var btn = Builder.NewBtnPrimary("button")
                 .SetButtonStyle(Style.Global.PrimaryBtn)
-                .SetText(new LocStrFormatted("Instant Dump"))
+                .SetText(new LocStrFormatted("立即完成倾倒"))
                 .AddToolTip(
-                    "All areas currently designated for dumping will have their dump operation completed immediately. Requires no resources from the player.")
+                    "目前指定倾倒的所有区域将立即完成倾倒作业。不需要玩家提供任何资源.")
                 .OnClick(() => _cheatProvider.CompleteAllDumpingDesignationsWithProduct((ProductProto.ID)_selectedLooseProductProto, _disableTerrainPhysicsOnMiningAndDumping, _ignoreMineTowerDesignations));
 
             return btn;
@@ -178,9 +178,9 @@ namespace CaptainOfCheats.Cheats.Terrain
         {
             var btn = Builder.NewBtnPrimary("button")
                     .SetButtonStyle(Style.Global.PrimaryBtn)
-                    .SetText(new LocStrFormatted("Change Terrain"))
+                    .SetText(new LocStrFormatted("指定倾倒"))
                     .AddToolTip(
-                        "All areas currently designated for dumping will be used as markers for where to change the terrain selected in the terrain dropdown. The height of the terrain will not change, only the material of the top 1 layer. Useful for making dirt land for farms.")
+                        "当前指定用于倾倒的所有区域都将用作更改地形下拉列表中所选地形的标记。地形的高度不会改变，只会改变最上面1层的材质。可用于为农场开辟泥土.")
                 .OnClick(() => _cheatProvider.ChangeTerrain((ProductProto.ID)_selectedLooseProductProto, _ignoreMineTowerDesignations));
                 
 
@@ -191,8 +191,8 @@ namespace CaptainOfCheats.Cheats.Terrain
         {
             var btn = Builder.NewBtnPrimary("button")
                 .SetButtonStyle(Style.Global.DangerBtn)
-                .SetText("Remove Trees")
-                .AddToolTip("Instantly remove all trees designated for removal by harvesters. Results in no resources for the player.")
+                .SetText("移除树木")
+                .AddToolTip("立即清除指定由收割机清除的所有树木。导致玩家没有资源.")
                 .OnClick(() => _cheatProvider.RemoveAllSelectedTrees());
 
             return btn;
@@ -202,11 +202,8 @@ namespace CaptainOfCheats.Cheats.Terrain
         {
             var btn = Builder.NewBtnPrimary("button")
                 .SetButtonStyle(Style.Global.PrimaryBtn)
-                .SetText("Add Trees")
-                .AddToolTip("All areas currently designated for dumping and not under mining tower control " +
-                            "will be used as markers for where to plant trees. " +
-                            "Trees are planted with moderate spacing and aged 12 " +
-                            "years (please check your local laws regarding minimum age of tree consent).")
+                .SetText("添加树木")
+                .AddToolTip("目前指定用于倾倒且不受采矿塔控制的所有区域都将用作植树地点的标记。树木种植间距适中.")
                 .OnClick(() => _cheatProvider.AddTreesToDumpingDesignations());
 
             return btn;
@@ -216,8 +213,8 @@ namespace CaptainOfCheats.Cheats.Terrain
         {
             var btn = Builder.NewBtnPrimary("button")
                 .SetButtonStyle(Style.Global.PrimaryBtn)
-                .SetText(new LocStrFormatted("Fill Ground Water"))
-                .AddToolTip("All ground reserves of water will be refilled to full capacity")
+                .SetText(new LocStrFormatted("填充地下水"))
+                .AddToolTip("所有地面储备水将被补充至满容量")
                 .OnClick(() => _cheatProvider.RefillGroundWaterReserve());
 
             return btn;
@@ -227,8 +224,8 @@ namespace CaptainOfCheats.Cheats.Terrain
         {
             var btn = Builder.NewBtnPrimary("button")
                 .SetButtonStyle(Style.Global.PrimaryBtn)
-                .SetText(new LocStrFormatted("Fill Ground Crude"))
-                .AddToolTip("All ground reserves of crude oil will be refilled to full capacity")
+                .SetText(new LocStrFormatted("填充原油"))
+                .AddToolTip("所有地面原油储备将满负荷补充")
                 .OnClick(() => _cheatProvider.RefillGroundCrudeReserve());
 
             return btn;
