@@ -2,7 +2,7 @@
 Captain of Industry 的作弊Mod，这是基于原作者：@altmank [CaptainOfCheats](https://github.com/altmank/CaptainOfCheats "CaptainOfCheats")的中文汉化版本。它有一个作弊菜单，可以通过 F8 键或单击底部工具栏上最右侧的船轮图标来访问。
 ## 更新
 
-基于原MOD CaptainOfCheats-v2.1.0 制作并汉化
+基于原MOD CaptainOfCheats-v2.1.0 中文汉化版
 
 Captain of Industry v0.5.3e   可食用
 
@@ -32,7 +32,8 @@ Captain of Industry v0.5.3e   可食用
 将 zip 文件解压缩到%USERPROFILE%\Documents\Captain of Industry\Mods目录，如果不存在Mods目录需要手动新建。
 提取的 zip 应该会产生类似%USERPROFILE%\Documents\Captain of Industry\Mods\CaptainOfCheats\CaptainOfCheats.dll. 如果不是出于任何原因，请将您的目录结构修复为如下所示。
 如果您之前没有在游戏中使用过此模组，则必须重新开始游戏才能正确初始化。希望这在未来会有所改变，但这是 COI 中模组的当前状态。
-在“杂项”选项卡>“改装”切换按钮下的游戏设置中启用改装
+在设置-其他设置-允许mods（需重启）选项打√
+在“杂项”选项卡>“要包含的模组选择”中选择 CaptainOfCheats 打√
 
 ## 免责声明
 该游戏处于抢先体验阶段，并且经常进行修补。补丁已经并且可能会继续破坏模组，因此请检查您正在使用的版本中提到的游戏版本。补丁的更新将在时间允许的情况下创建。
