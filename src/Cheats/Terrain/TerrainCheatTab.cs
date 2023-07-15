@@ -116,7 +116,7 @@ namespace CaptainOfCheats.Cheats.Terrain
         {
             var toggleBtn = Builder.NewSwitchBtn()
                 .SetText("矿场控制塔")
-                .AddTooltip("当立即完成采矿或倾倒作业时，矿场控制塔下的指定.")
+                .AddTooltip("当立即完成采矿或倾倒作业时，忽略矿场控制塔下的指定.")
                 .SetOnToggleAction((toggleVal) => _ignoreMineTowerDesignations = toggleVal);
 
             _switchBtns.Add(toggleBtn, () => _ignoreMineTowerDesignations);
