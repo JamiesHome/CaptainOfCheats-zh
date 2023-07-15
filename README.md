@@ -28,11 +28,18 @@ Captain of Industry v0.5.3e   可食用
 - 树木移除
 
 ## 安装
-从 GitHub Release 下载 mod zip 文件（它将被命名为“CaptainOfCheats-vX.XXzip，其中 X 被发行版本替换”）。如果您的游戏版本不存在发行版，使用另一个版本可能无法正确加载。
-将 zip 文件解压缩到%USERPROFILE%\Documents\Captain of Industry\Mods目录，如果不存在Mods目录需要手动新建。
-提取的 zip 应该会产生类似%USERPROFILE%\Documents\Captain of Industry\Mods\CaptainOfCheats\CaptainOfCheats.dll. 如果不是出于任何原因，请将您的目录结构修复为如下所示。
-如果您之前没有在游戏中使用过此模组，则必须重新开始游戏才能正确初始化。希望这在未来会有所改变，但这是 COI 中模组的当前状态。
-在设置-其他设置-允许mods（需重启）选项打√
+从 GitHub Release 下载 mod zip 文件（它将被命名为“CaptainOfCheats-vX.XXzip，其中 X 被发行版本替换”）。    
+
+如果您的游戏版本不存在发行版，使用另一个版本可能无法正确加载。    
+
+将 zip 文件解压缩到%USERPROFILE%\Documents\Captain of Industry\Mods目录，如果不存在Mods目录需要手动新建。  
+
+提取的 zip 应该会产生类似%USERPROFILE%\Documents\Captain of Industry\Mods\CaptainOfCheats\CaptainOfCheats.dll. 如果不是出于任何原因，请将您的目录结构修复为如下所示。  
+
+如果您之前没有在游戏中使用过此模组，则必须重新开始游戏才能正确初始化。希望这在未来会有所改变，但这是 COI 中模组的当前状态。  
+
+在设置-其他设置-允许mods（需重启）选项打√  
+
 在“杂项”选项卡>“要包含的模组选择”中选择 CaptainOfCheats 打√
 
 ## 免责声明
