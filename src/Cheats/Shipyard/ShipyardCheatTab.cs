@@ -35,14 +35,14 @@ namespace CaptainOfCheats.Cheats.Shipyard
             _productProtos = _protosDb.Filter<ProductProto>(proto => proto.CanBeLoadedOnTruck).OrderBy(x => x);
         }
 
-        public string Name => "Shipyard";
+        public string Name => "船舶";
         public string IconPath => Assets.Unity.UserInterface.Toolbar.CargoShip_svg;
 
         protected override void BuildUi()
         {
             var tabContainer = CreateStackContainer();
             
-            Builder.AddSectionTitle(tabContainer, new LocStrFormatted("Shipyard Product Storage"), new LocStrFormatted("Add or remove products in the Shipyard storage."), Offset.Zero);
+            Builder.AddSectionTitle(tabContainer, new LocStrFormatted("船只码头产品储存"), new LocStrFormatted("添加或删除 Shipyard 仓库中的产品."), Offset.Zero);
             var sectionTitlesContainer = Builder
                 .NewStackContainer("shipyardContainer")
                 .SetStackingDirection(StackContainer.Direction.LeftToRight)
@@ -50,10 +50,10 @@ namespace CaptainOfCheats.Cheats.Shipyard
                 .SetItemSpacing(10f)
                 .AppendTo(tabContainer, offset: Offset.All(0), size: 30);
 
-            var quantitySectionTitle = Builder.CreateSectionTitle(new LocStrFormatted("Quantity"), new LocStrFormatted("Set the quantity of the product that will be affected by your add or remove product operation."));
+            var quantitySectionTitle = Builder.CreateSectionTitle(new LocStrFormatted("操作数量"), new LocStrFormatted("设置将受添加或删除产品操作影响的产品数量."));
             quantitySectionTitle.AppendTo(sectionTitlesContainer,  quantitySectionTitle.GetPreferedWidth(), Mafi.Unity.UiFramework.Offset.Left(10));
             
-            var productSectionTitle = Builder.CreateSectionTitle(new LocStrFormatted("Product"), new LocStrFormatted("Select the product to add/remove from your shipyard."));
+            var productSectionTitle = Builder.CreateSectionTitle(new LocStrFormatted("产品"), new LocStrFormatted("选择要从您的船舶码头添加/删除的产品."));
             productSectionTitle.AppendTo(sectionTitlesContainer, productSectionTitle.GetPreferedWidth(), Offset.Left(245));
             
             var quantityAndProductContainer = Builder
@@ -84,7 +84,7 @@ namespace CaptainOfCheats.Cheats.Shipyard
             this.Builder.NewIconContainer("symbol").SetIcon("Assets/Unity/UserInterface/General/Tradable128.png").PutToCenterMiddleOf<IconContainer>((IUiElement) horSep, new Vector2(20f, 20f));
             this.Builder.NewIconContainer("right").SetIcon("Assets/Unity/UserInterface/General/HorizontalGradientToRight48.png", false).PutToRightMiddleOf<IconContainer>((IUiElement) horSep, new Vector2(300f, 1f));
             
-            Builder.AddSectionTitle(tabContainer, new LocStrFormatted("Main Ship"));
+            Builder.AddSectionTitle(tabContainer, new LocStrFormatted("舰船探索"));
             var mainShipPanel = Builder.NewPanel("mainShipPanel").SetBackground(Builder.Style.Panel.ItemOverlay);
             mainShipPanel.AppendTo(tabContainer, size: 50f, Offset.All(0));
 
@@ -121,8 +121,8 @@ namespace CaptainOfCheats.Cheats.Shipyard
         {
             var btn = Builder.NewBtnGeneral("button")
                 .SetButtonStyle(Style.Global.PrimaryBtn)
-                .SetText(new LocStrFormatted("Add Product"))
-                .AddToolTip("Add the product at the quantity selected into your Shipyard storage.")
+                .SetText(new LocStrFormatted("添加产品"))
+                .AddToolTip("将所选数量的产品添加到您的船舶码头仓库中.")
                 .OnClick(() => _shipyardCheatProvider.AddItemToShipyard(_selectedProduct.Value, (int)_quantity));
 
             return btn;
@@ -133,8 +133,8 @@ namespace CaptainOfCheats.Cheats.Shipyard
         {
             var btn = Builder.NewBtnGeneral("button")
                 .SetButtonStyle(Style.Global.PrimaryBtn)
-                .SetText(new LocStrFormatted("Finish Exploration"))
-                .AddToolTip("Set your ship to do an action and then press this button and they will complete it immediately.")
+                .SetText(new LocStrFormatted("完成探索"))
+                .AddToolTip("让你的船执行一个探索，然后按下这个按钮，他们会立即探索完成.")
                 .OnClick(() => _fleetCheatProvider.FinishExploration());
 
             return btn;
@@ -144,8 +144,8 @@ namespace CaptainOfCheats.Cheats.Shipyard
         {
             var btn = Builder.NewBtnGeneral("button")
                 .SetButtonStyle(Style.Global.PrimaryBtn)
-                .SetText(new LocStrFormatted("Repair Ship"))
-                .AddToolTip("Repair your main ship to full health.")
+                .SetText(new LocStrFormatted("立即修理船舶"))
+                .AddToolTip("将你的舰船修复至完全健康.")
                 .OnClick(() => _fleetCheatProvider.RepairFleet());
 
             return btn;
@@ -155,8 +155,8 @@ namespace CaptainOfCheats.Cheats.Shipyard
         {
             var btn = Builder.NewBtnGeneral("button")
                 .SetButtonStyle(Style.Global.PrimaryBtn)
-                .SetText("Force Unload Ship")
-                .AddToolTip("Bypass shipyard cargo capacity check and forcefully unload your ship into your shipyard cargo.")
+                .SetText("强行卸载船舶货物")
+                .AddToolTip("绕过造船厂货物容量检查并将您的船强行卸载到您的造船厂货物中。")
                 .OnClick(() => _shipyardCheatProvider.ForceUnloadShipyardShip());
             return btn;
         }
