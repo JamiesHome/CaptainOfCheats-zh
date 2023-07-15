@@ -122,7 +122,7 @@ namespace CaptainOfCheats.Cheats.Generate
         private void BuildUnitySlider(StackContainer topOf)
         {
             Builder
-                .AddSectionTitle(topOf, new LocStrFormatted("永久增加凝聚力"), new LocStrFormatted("使用增量按钮更改永久凝聚力数量生成"));
+                .AddSectionTitle(topOf, new LocStrFormatted("永久增加凝聚力（每月）"), new LocStrFormatted("使用增量按钮更改永久凝聚力数量生成"));
 
             var sliderLabel = Builder
                 .NewTxt("")
