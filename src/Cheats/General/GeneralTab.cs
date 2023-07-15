@@ -43,7 +43,7 @@ namespace CaptainOfCheats.Cheats.General
             _diseaseCheatProvider = diseaseCheatProvider.Instance;
         }
 
-        public string Name => "General";
+        public string Name => "居民服务";
         public string IconPath => Assets.Unity.UserInterface.Toolbar.Settlement_svg;
 
         private Dictionary<int, Action<int>> PopulationIncrementButtonConfig =>
@@ -90,35 +90,35 @@ namespace CaptainOfCheats.Cheats.General
                 .AppendTo(tabContainer, offset: Offset.All(0), size: 30);
 
             var instantModeToggle = NewToggleSwitch(
-                "Instant Mode",
-                "Set instant mode off (unchecked) or on (checked). Enables instant build, instant research, instant upgrades (shipyards, buildings, settlements, mines), instant vehicle construction, and instant repair when on.",
+                "即时生效模式",
+                "将即时模式设置为关闭（未选中）或打开（选中）。启用即时建造、即时研究、即时升级（造船厂、建筑物、定居点、矿山）、即时车辆建造和即时维修.",
                 toggleVal => _instantBuildCheatProvider.ToggleInstantMode(toggleVal),
                 () => _instantBuildCheatProvider.IsInstantModeEnabled());
             instantModeToggle.AppendTo(firstRowContainer, new Vector2(instantModeToggle.GetWidth(), 25), ContainerPosition.LeftOrTop);
 
             var maintenanceToggle = NewToggleSwitch(
-                "Maintenance",
-                "Set Maintenance off (unchecked) or on (checked). If on, then your settlement will consume maintenance resources. If off, all consumption of maintenance will stop.",
+                "维护",
+                "将维护设置为关闭（未选中）或打开（选中）。如果打开，那么您的结算将消耗维护资源。如果关闭，所有维护消耗将停止",
                 toggleVal => _maintenanceCheatProvider.ToggleMaintenance(toggleVal),
                 () => _maintenanceCheatProvider.IsMaintenanceEnabled());
             maintenanceToggle.AppendTo(firstRowContainer, new Vector2(maintenanceToggle.GetWidth(), 25), ContainerPosition.LeftOrTop);
             maintenanceToggle.PutToRightOf(instantModeToggle, maintenanceToggle.GetWidth());
             
             var diseaseToggle = NewToggleSwitch(
-                "Disease",
-                "Set Disease off (unchecked) or on (checked). If off, every day if disease is detected it will be removed automatically. Toggle on/off is not persisted in your save game and resets every reload.",
+                "健康",
+                "将“健康”设置为关闭（未选中）或打开（选中）。如果关闭，每天如果检测到疾病，它将自动删除。切换开/关不会保留在您的保存游戏中，并且会重置每次重新加载.",
                 toggleVal => _diseaseCheatProvider.ToggleDisease(toggleVal),
                 () => !_diseaseCheatProvider.IsDiseaseDisabled);
             diseaseToggle.AppendTo(firstRowContainer, new Vector2(diseaseToggle.GetWidth(), 25), ContainerPosition.LeftOrTop);
             diseaseToggle.PutToRightOf(instantModeToggle, diseaseToggle.GetWidth(), Offset.Right(-225));
 
             
-            Builder.AddSectionTitle(tabContainer, new LocStrFormatted("Settlement Population"), new LocStrFormatted("Add or remove people from your population using the increment buttons."));
+            Builder.AddSectionTitle(tabContainer, new LocStrFormatted("定居人口"), new LocStrFormatted("使用增量按钮在人口中添加或删除人员."));
             var populationIncrementButtonGroup = Builder.NewIncrementButtonGroup(PopulationIncrementButtonConfig);
             populationIncrementButtonGroup.AppendTo(tabContainer, new float?(50f), Offset.All(0));
 
 
-            Builder.AddSectionTitle(tabContainer, new LocStrFormatted("Research"));
+            Builder.AddSectionTitle(tabContainer, new LocStrFormatted("研究"));
             var researchPanel = Builder.NewPanel("researchPanel").SetBackground(Builder.Style.Panel.ItemOverlay);
 
             researchPanel.AppendTo(tabContainer, size: 50f, Offset.All(0));
@@ -132,19 +132,19 @@ namespace CaptainOfCheats.Cheats.General
             
             var unlockCurrentResearchButton = Builder.NewBtnGeneral("button")
                 .SetButtonStyle(Style.Global.PrimaryBtn)
-                .SetText(new LocStrFormatted("Finish Current Research"))
-                .AddToolTip("Start research, and then use this command to instantly complete it. You can also use Instant Mode to complete started research immediately.")
+                .SetText(new LocStrFormatted("完成当前研究"))
+                .AddToolTip("开始研究，然后使用这个命令立即完成它。您还可以使用即时模式立即完成已开始的研究.")
                 .OnClick(_researchCheatProvider.UnlockCurrentResearch);
             unlockCurrentResearchButton.AppendTo(thirdRowContainer, unlockCurrentResearchButton.GetOptimalSize(), ContainerPosition.MiddleOrCenter);
 
             var unlockAllResearchButton = Builder.NewBtnGeneral("button")
                 .SetButtonStyle(Style.Global.PrimaryBtn)
-                .SetText(new LocStrFormatted("Unlock All Research"))
-                .AddToolTip("Unlocks all research including research that requires discoveries to research.")
+                .SetText(new LocStrFormatted("解锁完成所有研究"))
+                .AddToolTip("解锁所有研究，包括需要发现才能进行研究的研究.")
                 .OnClick(_researchCheatProvider.UnlockAllResearch);
             unlockAllResearchButton.AppendTo(thirdRowContainer, unlockAllResearchButton.GetOptimalSize(), ContainerPosition.MiddleOrCenter);
             
-            Builder.AddSectionTitle(tabContainer, new LocStrFormatted("Other"));
+            Builder.AddSectionTitle(tabContainer, new LocStrFormatted("其他"));
             var otherPanel = Builder.NewPanel("otherPanel").SetBackground(Builder.Style.Panel.ItemOverlay);
             otherPanel.AppendTo(tabContainer, size: 50f, Offset.All(0));
             
@@ -157,8 +157,8 @@ namespace CaptainOfCheats.Cheats.General
             
             var addUnityButton = Builder.NewBtnGeneral("button")
                 .SetButtonStyle(Style.Global.PrimaryBtn)
-                .SetText(new LocStrFormatted("Add 25 Unity"))
-                .AddToolTip("Add 25 Unity to your current supply, it will not exceed your max Unity cap.")
+                .SetText(new LocStrFormatted("ADD 25"))
+                .AddToolTip("将 25 凝聚力 添加到您当前的供应量中，不会超出您的最大 凝聚力 上限")
                 .OnClick(() => _unityCheatProvider.AddUnity(25));
             addUnityButton.AppendTo(fourthRowContainer, addUnityButton.GetOptimalSize(), ContainerPosition.MiddleOrCenter);
             
