@@ -1,5 +1,5 @@
 # CaptainOfCheats-zh
-Captain of Industry 的作弊Mod，这是基于[CaptainOfCheats](https://github.com/altmank/CaptainOfCheats "CaptainOfCheats")的中文汉化版本。它有一个作弊菜单，可以通过 F8 键或单击底部工具栏上最右侧的船轮图标来访问。
+Captain of Industry 的作弊Mod，这是基于原作者：@altmank [CaptainOfCheats](https://github.com/altmank/CaptainOfCheats "CaptainOfCheats")的中文汉化版本。它有一个作弊菜单，可以通过 F8 键或单击底部工具栏上最右侧的船轮图标来访问。
 ## 更新
 
 基于原MOD CaptainOfCheats-v2.1.0 制作并汉化
