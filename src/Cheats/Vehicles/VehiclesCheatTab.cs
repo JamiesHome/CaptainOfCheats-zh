@@ -35,7 +35,7 @@ namespace CaptainOfCheats.Cheats.Vehicles
                 { 50, _vehiclesCheatProvider.ChangeVehicleLimit }
             };
 
-        public string Name => "Vehicles";
+        public string Name => "车辆";
 
         public string IconPath => Assets.Unity.UserInterface.Toolbar.Vehicles_svg;
 
@@ -69,17 +69,17 @@ namespace CaptainOfCheats.Cheats.Vehicles
                 .AppendTo(tabContainer, offset: Offset.All(0), size: 30);
             
             var fuelToggle = NewToggleSwitch(
-                "Disable Fuel Consumption",
-                "Set fuel consumption to zero (checked) or default (unchecked).",
+                "禁用车辆燃油消耗",
+                "将油耗设置为零（选中）或默认值（未选中）.",
                 toggleVal => _vehiclesCheatProvider.SetVehicleFuelConsumptionToZero(toggleVal),
                 () => _vehiclesCheatProvider.IsVehicleFuelConsumptionZero());
             fuelToggle.AppendTo(firstRowContainer, new Vector2(fuelToggle.GetWidth(), 25), ContainerPosition.LeftOrTop);
             
-            Builder.AddSectionTitle(tabContainer, new LocStrFormatted("Vehicle Cap Limit"), new LocStrFormatted("Adjust vehicle limit cap up or down using the increment buttons."));
+            Builder.AddSectionTitle(tabContainer, new LocStrFormatted("车辆上限数量修改"), new LocStrFormatted("增加车辆上限."));
             var vehicleCapIncrementButtonPanel = Builder.NewIncrementButtonGroup(VehicleCapIncrementButtonConfig);
             vehicleCapIncrementButtonPanel.AppendTo(tabContainer, new float?(50f), Offset.All(0));
             
-            Builder.AddSectionTitle(tabContainer, new LocStrFormatted("Truck Capacity Multiplier"));
+            Builder.AddSectionTitle(tabContainer, new LocStrFormatted("车辆容量修改"));
             var capacityMultiplierPanel = Builder.NewPanel("capacityMultiplierPanel").SetBackground(Builder.Style.Panel.ItemOverlay);
             capacityMultiplierPanel.AppendTo(tabContainer, size: 50f, Offset.All(0));
             
@@ -93,28 +93,28 @@ namespace CaptainOfCheats.Cheats.Vehicles
             var plus100CapacityBtn = Builder.NewBtnGeneral("button")
                 .SetButtonStyle(Style.Global.PrimaryBtn)
                 .SetText(new LocStrFormatted("+100%"))
-                .AddToolTip("Increase the capacity of your trucks by 100%")
+                .AddToolTip("增加容量100%")
                 .OnClick(() => _vehiclesCheatProvider.SetTruckCapacityMultiplier(VehiclesCheatProvider.TruckCapacityMultiplier.OneHundred));
             plus100CapacityBtn.AppendTo(capacityMultiplierBtnContainer, plus100CapacityBtn.GetOptimalSize(), ContainerPosition.MiddleOrCenter);
             
             var plus200CapacityBtn = Builder.NewBtnGeneral("button")
                 .SetButtonStyle(Style.Global.PrimaryBtn)
                 .SetText(new LocStrFormatted("+200%"))
-                .AddToolTip("Increase the capacity of your trucks by 200%")
+                .AddToolTip("增加容量200%")
                 .OnClick(() => _vehiclesCheatProvider.SetTruckCapacityMultiplier(VehiclesCheatProvider.TruckCapacityMultiplier.TwoHundred));
             plus200CapacityBtn.AppendTo(capacityMultiplierBtnContainer, plus200CapacityBtn.GetOptimalSize(), ContainerPosition.MiddleOrCenter);
             
             var plus500CapacityBtn = Builder.NewBtnGeneral("button")
                 .SetButtonStyle(Style.Global.PrimaryBtn)
                 .SetText(new LocStrFormatted("+500%"))
-                .AddToolTip("Increase the capacity of your trucks by 500%")
+                .AddToolTip("增加容量500%")
                 .OnClick(() => _vehiclesCheatProvider.SetTruckCapacityMultiplier(VehiclesCheatProvider.TruckCapacityMultiplier.FiveHundred));
             plus500CapacityBtn.AppendTo(capacityMultiplierBtnContainer, plus500CapacityBtn.GetOptimalSize(), ContainerPosition.MiddleOrCenter);
             
             var resetCapacityBtn = Builder.NewBtnGeneral("button")
                 .SetButtonStyle(Style.Global.DangerBtn)
-                .SetText(new LocStrFormatted("Reset"))
-                .AddToolTip("Reset the capacity of your trucks")
+                .SetText(new LocStrFormatted("重置"))
+                .AddToolTip("重置卡车的容量")
                 .OnClick(() => _vehiclesCheatProvider.SetTruckCapacityMultiplier(VehiclesCheatProvider.TruckCapacityMultiplier.Reset));
             resetCapacityBtn.AppendTo(capacityMultiplierBtnContainer, resetCapacityBtn.GetOptimalSize(), ContainerPosition.MiddleOrCenter);
             
