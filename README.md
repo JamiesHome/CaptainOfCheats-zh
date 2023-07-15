@@ -4,7 +4,7 @@ Captain of Industry 的作弊Mod，这是基于[CaptainOfCheats](https://github.
 
 基于CaptainOfCheats-v2.1.0 中文汉化版  
 
-Captain of Industry v0.5.3e 可食用  12
+Captain of Industry v0.5.3e 可食用  1223
 
 ## 功能
 - 将指定数量的任何可运输产品运到您的造船厂
