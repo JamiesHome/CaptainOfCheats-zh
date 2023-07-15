@@ -32,9 +32,11 @@ Captain of Industry v0.5.3e   可食用
 
 如果您的游戏版本不存在发行版，使用另一个版本可能无法正确加载。    
 
-将 zip 文件解压缩到%USERPROFILE%\Documents\Captain of Industry\Mods目录，如果不存在Mods目录需要手动新建。  
-
-提取的 zip 应该会产生类似%USERPROFILE%\Documents\Captain of Industry\Mods\CaptainOfCheats\CaptainOfCheats.dll. 如果不是出于任何原因，请将您的目录结构修复为如下所示。  
+将 zip 文件解压，应该会得到一个 CaptainOfCheats 文件夹    
+  
+将解压出来的CaptainOfCheats文件夹放在C:\Users\XXXX\AppData\Roaming\Captain of Industry\Mods 中    
+  
+此处“XXXX”是你的电脑用户名
 
 如果您之前没有在游戏中使用过此模组，则必须重新开始游戏才能正确初始化。希望这在未来会有所改变，但这是 COI 中模组的当前状态。  
 
