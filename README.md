@@ -2,6 +2,11 @@
 Captain of Industry 的作弊Mod，这是基于原作者：@altmank [CaptainOfCheats](https://github.com/altmank/CaptainOfCheats "CaptainOfCheats")的中文汉化版本。它有一个作弊菜单，可以通过 F8 键或单击底部工具栏上最右侧的船轮图标来访问。
 ## 更新
 
+2023/09/11
+更改修改部分bug
+测试Captain of Industry v0.5.4g 可以使用
+
+2023/07/10
 基于原MOD CaptainOfCheats-v2.1.0 中文汉化版
 
 Captain of Industry v0.5.3e   可食用
