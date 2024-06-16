@@ -1,6 +1,7 @@
 # CaptainOfCheats-zh
 @altmank原作者已弃用项目，此计划无限期停止
 @altmankThe original author has abandoned the project and this plan has been discontinued indefinitely
+推荐使用[COI-Extended](https://github.com/Keranik/COI-Extended "COI-Extended")
 Captain of Industry 的作弊Mod，这是基于原作者：@altmank [CaptainOfCheats](https://github.com/altmank/CaptainOfCheats "CaptainOfCheats")的中文汉化版本。它有一个作弊菜单，可以通过 F8 键或单击底部工具栏上最右侧的船轮图标来访问。
 ## 更新
 
